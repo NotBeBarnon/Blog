@@ -1,0 +1,40 @@
+{% extends 'web/base_copy.html' %}
+
+{% block js %}
+{{ block.super }}
+<script type="text/javascript" src="/static/web/js/hc-sticky.js"></script>
+{% endblock %}
+
+
+{% block content %}
+
+
+{% block header %}
+    {{ block.super }}
+{% endblock %}
+
+<article>
+
+{% block l-box %}
+    {{ block.super }}
+{% endblock %}
+
+
+  <main class="r_box">
+    {% for art in arts %}
+    <li>
+      <!--<i><a href="/"><img src="/static/web/images/1.jpg"></a></i>-->
+      <h3><a href="/">{{ art.title }}</a></h3>
+      <p>{{ art.desc }}</p>
+    </li>
+    {% endfor %}
+
+    <div class="pagelist"><a class="allpage"><b>99</b></a>&nbsp;&nbsp;<a href="#" class="curPage">1</a>&nbsp;&nbsp;<a href="#" onclick="page(2)">2</a>&nbsp;&nbsp;<a href="#" onclick="page(3)">3</a>&nbsp;&nbsp;<a href="#" onclick="page(4)">4</a>&nbsp;&nbsp;<a href="#" onclick="page(5)">5</a>&nbsp;&nbsp;<a href="#" onclick="page(6)">6</a>&nbsp;&nbsp;<a href="#" onclick="page(7)">7</a>&nbsp;&nbsp;<a href="#" onclick="page(8)">8</a>&nbsp;&nbsp;<a href="#" onclick="page(9)">9</a>&nbsp;&nbsp;<a href="#" onclick="page(2)">下一页</a></div>
+  </main>
+</article>
+
+{% block footer %}
+  {{ block.super }}
+{% endblock %}
+
+{% endblock %}
